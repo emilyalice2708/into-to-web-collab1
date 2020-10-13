@@ -2,12 +2,6 @@ require 'sinatra'
 
 set :session_secret, 'super secret'
 
-# configure do 
-#   set :sessions_secret, "Meryl & Tim's secret page"
-
-# end
-
-
   get '/' do
     "Hello World"
   end
@@ -25,7 +19,6 @@ set :session_secret, 'super secret'
   end
 
   get '/cat' do
-    "<div style='border: dashed red;'><img src='http://bit.ly/1eze8aE'></div>"
+    @name = ["Amigo", "Oscar", "Viking"].sample
+    erb(:index)
   end
-
-# run Sinatra::Application.run!
